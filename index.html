@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikita Kurguzov - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSJub25lIj48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjQ1IiByeT0iMjAiIHN0cm9rZT0iIzk3RkVFRCIgc3Ryb2tlLXdpZHRoPSIyIiB0cmFuc2Zvcm09InJvdGF0ZSgwLCA1MCwgNTApIi8+PGVsbGlwc2UgY3g9IjUwIiBjeT0iNTAiIHJ4PSI0NSIgcnk9IjIwIiBzdHJva2U9IiM5N0ZFRUQiIHN0cm9rZS13aWR0aD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoNjAsIDUwLCA1MCkiLz48ZWxsaXBzZSBjeD0iNTAiIGN5PSI1MCIgcng9IjQ1IiByeT0iMjAiIHN0cm9rZT0iIzk3RkVFRCIgc3Ryb2tlLXdpZHRoPSIyIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjAsIDUwLCA1MCkiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIxMCIgZmlsbD0iIzM1QTI5RiIvPjwvZz48L3N2Zz4=" type="image/svg+xml">
+    <script src="https://kit.fontawesome.com/3a2d917a7e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- SVG Definitions -->
+    <svg style="display: none;">
+        <!-- Atom Icon -->
+        <symbol id="atom-icon" viewBox="0 0 100 100">
+            <g fill="none">
+                <!-- Electron orbits -->
+                <ellipse cx="50" cy="50" rx="45" ry="20" stroke="#97FEED" stroke-width="2" transform="rotate(0, 50, 50)"/>
+                <ellipse cx="50" cy="50" rx="45" ry="20" stroke="#97FEED" stroke-width="2" transform="rotate(60, 50, 50)"/>
+                <ellipse cx="50" cy="50" rx="45" ry="20" stroke="#97FEED" stroke-width="2" transform="rotate(120, 50, 50)"/>
+                
+                <!-- Electron with animation -->
+                <circle r="4" fill="#97FEED">
+                    <animateMotion 
+                        path="M95,50 A45,20 0 1,1 5,50 A45,20 0 1,1 95,50"
+                        dur="6s"
+                        repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Nucleus -->
+                <circle cx="50" cy="50" r="10" fill="#35A29F"/>
+            </g>
+        </symbol>
+
+        <!-- Tech Background -->
+        <symbol id="tech-background" viewBox="0 0 200 200">
+            <defs>
+                <!-- Circuit trace gradient -->
+                <linearGradient id="traceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0B666A;stop-opacity:0.4">
+                        <animate attributeName="stop-opacity" values="0.4;0.6;0.4" dur="3s" repeatCount="indefinite"/>
+                    </stop>
+                    <stop offset="100%" style="stop-color:#35A29F;stop-opacity:0.4">
+                        <animate attributeName="stop-opacity" values="0.4;0.6;0.4" dur="3s" repeatCount="indefinite"/>
+                    </stop>
+                </linearGradient>
+                
+                <!-- Component patterns -->
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#97FEED" stroke-width="0.2" stroke-opacity="0.1"/>
+                </pattern>
+            </defs>
+
+            <!-- Background grid -->
+            <rect width="100%" height="100%" fill="url(#grid)"/>
+            
+            <!-- Main Circuit Paths -->
+            <g stroke="url(#traceGradient)" fill="none" stroke-width="1" stroke-linecap="round">
+                <!-- Horizontal main bus -->
+                <path d="M 0,100 L 200,100">
+                    <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="15s" repeatCount="indefinite"/>
+                </path>
+                
+                <!-- Vertical traces -->
+                <path d="M 40,0 L 40,80 M 40,120 L 40,200">
+                    <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="10s" repeatCount="indefinite"/>
+                </path>
+                <path d="M 80,0 L 80,60 M 80,140 L 80,200">
+                    <animate attributeName="stroke-dasharray" values="200,0;0,200" dur="12s" repeatCount="indefinite"/>
+                </path>
+                <path d="M 120,0 L 120,90 M 120,110 L 120,200">
+                    <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="13s" repeatCount="indefinite"/>
+                </path>
+                <path d="M 160,0 L 160,70 M 160,130 L 160,200">
+                    <animate attributeName="stroke-dasharray" values="200,0;0,200" dur="11s" repeatCount="indefinite"/>
+                </path>
+
+                <!-- Circuit components -->
+                <!-- Resistors -->
+                <path d="M 40,80 l 5,-3 l 10,6 l 10,-6 l 10,6 l 5,-3" stroke="#97FEED" stroke-opacity="0.3"/>
+                <path d="M 120,90 l 5,-3 l 10,6 l 10,-6 l 10,6 l 5,-3" stroke="#97FEED" stroke-opacity="0.3"/>
+                
+                <!-- Capacitors -->
+                <path d="M 80,60 l 0,5 M 80,70 l -10,0 l 20,0" stroke="#97FEED" stroke-opacity="0.3"/>
+                <path d="M 160,70 l 0,5 M 160,80 l -10,0 l 20,0" stroke="#97FEED" stroke-opacity="0.3"/>
+                
+                <!-- ICs -->
+                <rect x="30" y="140" width="20" height="30" stroke="#97FEED" fill="none" stroke-opacity="0.3"/>
+                <rect x="150" y="130" width="20" height="30" stroke="#97FEED" fill="none" stroke-opacity="0.3"/>
+            </g>
+
+            <!-- Connection points -->
+            <g fill="#97FEED">
+                <!-- Main bus connections -->
+                <circle cx="40" cy="100" r="2">
+                    <animate attributeName="fill-opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="80" cy="100" r="2">
+                    <animate attributeName="fill-opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="120" cy="100" r="2">
+                    <animate attributeName="fill-opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="160" cy="100" r="2">
+                    <animate attributeName="fill-opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Component connections -->
+                <circle cx="40" cy="80" r="1.5" fill-opacity="0.3"/>
+                <circle cx="40" cy="120" r="1.5" fill-opacity="0.3"/>
+                <circle cx="80" cy="60" r="1.5" fill-opacity="0.3"/>
+                <circle cx="80" cy="140" r="1.5" fill-opacity="0.3"/>
+                <circle cx="120" cy="90" r="1.5" fill-opacity="0.3"/>
+                <circle cx="120" cy="110" r="1.5" fill-opacity="0.3"/>
+                <circle cx="160" cy="70" r="1.5" fill-opacity="0.3"/>
+                <circle cx="160" cy="130" r="1.5" fill-opacity="0.3"/>
+            </g>
+
+            <!-- Data flow animations -->
+            <g fill="#97FEED">
+                <circle cx="0" cy="100" r="1">
+                    <animate attributeName="cx" values="0;200" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="200" cy="100" r="1">
+                    <animate attributeName="cx" values="200;0" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="fill-opacity" values="0.6;0.2;0.6" dur="8s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+        </symbol>
+
+        <!-- Vue.js Icon -->
+        <symbol id="vue-icon" viewBox="0 0 261.76 226.69">
+            <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
+                <g transform="translate(178.06 235.01)">
+                    <path d="m0 0-22.669-39.264-22.669 39.264h-75.491l98.16-170.02 98.16 170.02z" fill="#41b883"/>
+                    <path d="m0 0-22.669-39.264-22.669 39.264h-36.227l58.896-102.01 58.896 102.01z" fill="#34495e"/>
+                </g>
+            </g>
+        </symbol>
+
+        <!-- Next.js Icon -->
+        <symbol id="nextjs-icon" viewBox="0 0 180 180">
+            <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+                <circle cx="90" cy="90" r="90" fill="black"/>
+            </mask>
+            <g mask="url(#mask0)">
+                <circle cx="90" cy="90" data-circle="true" fill="black" r="90"/>
+                <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="white"/>
+                <rect fill="white" height="72" width="12" x="115" y="54"/>
+            </g>
+        </symbol>
+
+        <!-- Phaser Icon -->
+        <symbol id="phaser-icon" viewBox="0 0 146 30">
+            <g clip-path="url(#clip0_201_48)">
+                <path d="M9.54294 0.671143H1.15247V9.30201V24.2953H9.54294V12.3893L12.9422 17.9329H25.5932V9.30201V0.671143H9.54294Z" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M8.88458 9.302L18.0182 9.302" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M56.7084 24.2953L61.1516 9.81879L65.5947 24.2953H97.121V15.7047L87.2756 9.26175H97.121V0.671143H74.1548V9.26175L83.9938 15.7047H74.1548V18.7517L67.8979 0.671143H62.7957H59.5074H54.4053L48.7616 18.7517V0.671143H40.3711V9.30201H33.9445V0.671143H25.554V24.2953H33.9445V17.9329H40.3711V24.2953H56.7084Z" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M97.121 0.671143V8.18792V9.26175V15.7047V16.7785V24.2953H120.081V16.7785V15.7047V9.26175V8.18792V0.671143H97.121Z" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M105.538 9.26172H120.081" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M105.538 16.1812H120.081" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M144.476 29.3289L139.302 17.9329H143.047V9.30202V0.671143H134.076H128.471H125.059H120.081V9.30202V24.2953H128.471V12.9369L135.902 29.3289H144.476Z" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M127.817 9.302L135.668 9.302" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo-container">
+                <svg class="logo-img" viewBox="0 0 100 100">
+                    <use href="#atom-icon"/>
+                </svg>
+                <h1>NK</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#welcome-section">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome-section">
+        <div class="tech-background-container">
+            <svg class="tech-background" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                <use href="#tech-background"/>
+            </svg>
+        </div>
+        <div class="welcome-content">
+            <h1>Nikita Kurguzov</h1>
+            <p>Tech Wizard</p>
+            <p id="tech-stack"></p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-tile">
+                <div class="project-image">
+                    <svg class="framework-icon">
+                        <use href="#vue-icon"/>
+                    </svg>
+                </div>
+                <h3 class="project-title">Pixel Art Framer</h3>
+                <p class="project-tech">Automatically detects sprite edges and adds pixel art border frame to it.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Vrolok15/Vue-Pixel-Art-Framer" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://vue-pixel-art-framer-qhljrwc2a-vrolok15s-projects.vercel.app/" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            <div class="project-tile">
+                <div class="project-image">
+                    <svg class="framework-icon">
+                        <use href="#vue-icon"/>
+                    </svg>
+                </div>
+                <h3 class="project-title">Interactive Progress Bars</h3>
+                <p class="project-tech">A Vue 3 application showcasing different styles of progress bars and charts with interactive controls.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Vrolok15/test-vue-progress-bars" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://test-vue-progress-bars.vercel.app/" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            <div class="project-tile">
+                <div class="project-image">
+                    <svg class="framework-icon">
+                        <use href="#nextjs-icon"/>
+                    </svg>
+                </div>
+                <h3 class="project-title">Sorting Algorithms Visualizer</h3>
+                <p class="project-tech">A Next.js application showcasing different sorting algorithms with interactive controls.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Vrolok15/nextjs-sorting-visualizer" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://nextjs-sorting-visualizer.vercel.app/" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games">
+        <h2 class="section-title">Games</h2>
+        <div class="projects-grid">
+            <div class="project-tile">
+                <div class="project-image">
+                    <svg class="framework-icon">
+                        <use href="#phaser-icon"/>
+                    </svg>
+                </div>
+                <h3 class="project-title">Battleships</h3>
+                <p class="project-tech">A simple naval battle game built with Phaser 3.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Vrolok15/Phaser-Battleships" class="project-link" target="_blank">GitHub</a>
+                    <a href="https://vrolok15.github.io/Phaser-Battleships/" class="project-link" target="_blank">Play</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2 class="section-title">Videos</h2>
+        <div class="projects-grid">
+            <div class="project-tile">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/gm2-_T4_sQM" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Use JavaScript in SharePoint forms: Manipulate SharePoint fields</h3>
+                    <p class="video-description">
+                        Discover how to leverage <strong>JavaScript</strong> within <strong>SharePoint</strong> <strong>forms</strong> in this detailed tutorial. Learn to dynamically manipulate fields, validate data, and implement conditional logic with <strong>PlumsailForms</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-links">
+            <a id="profile-link" href="https://github.com/Vrolok15" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://t.me/Kit_Kitych" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text"></p>
+    </footer>
+
+    <script>
+        const footerText = document.querySelector('.footer-text');
+        footerText.innerHTML = `&copy; ${new Date().getFullYear()} Nikita Kurguzov. All rights reserved.`;
+
+        const techStack = ['JavaScript', 'TypeScript', 'Vue', 'React', 'Next.js', 'Phaser', 'SharePoint'];
+        //display one tech from array at a time, with a delay of 1 second between each display, typing one letter at a time
+        function displayTech() {
+            let currentIndex = 0;
+            let techIndex = 0;
+            const techElement = document.getElementById('tech-stack');
+            
+            function typeLetter() {
+                const currentTech = techStack[techIndex];
+                
+                if (currentIndex < currentTech.length) {
+                    // Add next letter
+                    techElement.textContent = currentTech.substring(0, currentIndex + 1);
+                    currentIndex++;
+                    setTimeout(typeLetter, 100);
+                } else {
+                    // Finished typing current tech, wait and then clear for next tech
+                    setTimeout(() => {
+                        // Clear text with backspace effect
+                        function backspace() {
+                            if (techElement.textContent.length > 0) {
+                                techElement.textContent = techElement.textContent.slice(0, -1);
+                                setTimeout(backspace, 50);
+                            } else {
+                                // Move to next tech
+                                techIndex = (techIndex + 1) % techStack.length;
+                                currentIndex = 0;
+                                setTimeout(typeLetter, 500);
+                            }
+                        }
+                        setTimeout(backspace, 1000);
+                    }, 1500);
+                }
+            }
+            
+            typeLetter();
+        }
+        displayTech();
+    </script>
+</body>
+</html>
