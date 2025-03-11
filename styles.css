@@ -198,7 +198,7 @@ ul {
 }
 
 /* Projects Section Styles */
-#projects, #games, #videos {
+#projects, #games, #videos, #certificates {
     padding: 5rem 2rem;
     background-color: var(--color-background);
 }
@@ -337,6 +337,147 @@ ul {
     line-height: 1.4;
 }
 
+/* Certificates Section Styles */
+.certificates-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+}
+
+@keyframes certificateAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificate-tile {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    max-width: 50vw;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    position: relative;
+    animation: certificateAppear 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.certificate-tile:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.certificate-tile:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.certificate-tile:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.certificate-tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(151, 254, 237, 0.3);
+}
+
+.certificate-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(151, 254, 237, 0.2);
+}
+
+.fcc-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 3px rgba(151, 254, 237, 0.5));
+    transition: all 0.3s;
+}
+
+.certificate-tile:hover .fcc-icon {
+    filter: drop-shadow(0 0 5px rgba(151, 254, 237, 0.8));
+    transform: rotate(5deg);
+}
+
+.certificate-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: rgba(11, 102, 106, 0.2);
+    padding: 1rem;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.fcc-certificate-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.certificate-tile:hover .fcc-certificate-img {
+    transform: scale(1.05);
+}
+
+.certificate-tile:hover .certificate-image {
+    background: rgba(11, 102, 106, 0.3);
+}
+
+.certificate-title {
+    font-weight: bold;
+    color: var(--color-accent);
+    transition: all 0.3s;
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.certificate-tile:hover .certificate-title {
+    text-shadow: 0 0 5px rgba(151, 254, 237, 0.5);
+}
+
+.certificate-description {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.certificate-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.certificate-link {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: var(--color-secondary);
+    transition: all 0.3s;
+}
+
+.certificate-link:hover {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    text-shadow: none;
+    transform: translateY(-2px);
+}
+
 /* Contact Section Styles */
 #contact {
     padding: 5rem 2rem;
@@ -419,6 +560,20 @@ footer {
     .video-container {
         padding-bottom: 75%; /* 4:3 Aspect Ratio for mobile */
     }
+    
+    .certificate-tile {
+        max-width: 90vw;
+    }
+    
+    .certificate-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .fcc-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -440,7 +595,7 @@ footer {
         gap: 1rem;
     }
     
-    .project-image {
+    .project-image, .certificate-image {
         height: 150px;
         padding: 1.5rem;
     }
