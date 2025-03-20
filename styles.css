@@ -118,36 +118,21 @@ ul {
     width: 100%;
 }
 
-/* Welcome Section Styles */
-#welcome-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: var(--color-background);
-}
-
+/* Tech Background */
 .tech-background-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    opacity: 0.25;
-    z-index: 1;
-    overflow: hidden;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .tech-background {
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: -50%;
-    left: -50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
     animation: techMove 15s linear infinite;
     filter: drop-shadow(0 0 5px var(--color-accent));
 }
@@ -171,6 +156,26 @@ ul {
     100% {
         transform: translate(0, 0) scale(1) rotate(0deg);
     }
+}
+
+/* Welcome Section */
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#welcome-section.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    height: 0;
 }
 
 .welcome-content {
@@ -208,7 +213,8 @@ ul {
 /* Projects Section Styles */
 #projects, #games, #videos, #certificates {
     padding: 5rem 2rem;
-    background-color: var(--color-background);
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -450,7 +456,8 @@ ul {
 #contact {
     padding: 5rem 2rem;
     text-align: center;
-    background-color: var(--color-background);
+    position: relative;
+    z-index: 1;
 }
 
 .contact-links {
@@ -478,10 +485,13 @@ ul {
 
 /* Footer */
 footer {
-    background-color: var(--color-primary);
-    padding: 2rem;
+    position: absolute;
+    z-index: 10;
+    background: var(--color-primary);
+    opacity: 0.95;
+    padding: 1rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -618,9 +628,6 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, 
-                              rgba(7, 25, 82, 0.5) 0%, 
-                              var(--color-background) 70%);
     z-index: 2;
 }
 

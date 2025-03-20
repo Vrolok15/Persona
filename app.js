@@ -187,6 +187,12 @@ const app = Vue.createApp({
             error: null
         }
     },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
     async created() {
         try {
             const [certificatesRes, projectsRes, gamesRes, videosRes] = await Promise.all([
@@ -220,6 +226,12 @@ const app = Vue.createApp({
             <p>{{ error }}</p>
         </div>
         <div v-else>
+            <div class="tech-background-container">
+                <svg class="tech-background" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                    <use href="#tech-background"/>
+                </svg>
+            </div>
+
             <nav id="navbar">
                 <div class="nav-content">
                     <div class="logo-container">
@@ -240,11 +252,6 @@ const app = Vue.createApp({
             </nav>
 
             <section id="welcome-section">
-                <div class="tech-background-container">
-                    <svg class="tech-background" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
-                        <use href="#tech-background"/>
-                    </svg>
-                </div>
                 <div class="welcome-content">
                     <h1>Nikita Kurguzov</h1>
                     <p>Tech Wizard</p>
