@@ -1,0 +1,20 @@
+[
+    {
+        "Title": "Pixel Art Framer",
+        "Description": "Automatically detects sprite edges and adds pixel art border frame to it.",
+        "Logo": "#vue-icon",
+        "ProjectUrl": "https://github.com/Vrolok15/Vue-Pixel-Art-Framer"
+    },
+    {
+        "Title": "Interactive Progress Bars",
+        "Description": "A Vue 3 application showcasing different styles of progress bars and charts with interactive controls.",
+        "Logo": "#vue-icon",
+        "ProjectUrl": "https://github.com/Vrolok15/test-vue-progress-bars"
+    },
+    {
+        "Title": "Sorting Algorithms Visualizer",
+        "Description": "A Next.js application showcasing different sorting algorithms with interactive controls.",
+        "Logo": "#nextjs-icon",
+        "ProjectUrl": "https://github.com/Vrolok15/nextjs-sorting-visualizer"
+    }
+]

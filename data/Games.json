@@ -1,0 +1,14 @@
+[
+    {
+        "Title": "Battleships",  
+        "Description": "A simple naval battle game built with Phaser 3.",
+        "ImageUrl": "/img/phaser-logo.svg",
+        "GameUrl": "https://vrolok15.github.io/Phaser-Battleships/"
+    },
+    {
+        "Title": "Creepy Crawler",
+        "Description": "A short horror dungeon crawler built with Phaser 3.",
+        "ImageUrl": "/img/phaser-logo.svg",
+        "GameUrl": "https://vrolok15.github.io/creepy-crawler-dist/"
+    }
+]

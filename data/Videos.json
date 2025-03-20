@@ -1,0 +1,12 @@
+[
+    {
+        "Title": "Use JavaScript in SharePoint forms: Manipulate SharePoint fields",
+        "Description": "Discover how to leverage JavaScript within SharePoint forms in this detailed tutorial. Learn to dynamically manipulate fields, validate data, and implement conditional logic with PlumsailForms",
+        "VideoUrl": "https://www.youtube.com/watch?v=gm2-_T4_sQM"
+    },
+    {
+        "Title": "Use JavaScript in SharePoint forms: List or Library control",
+        "Description": "Using JavaScript in SharePoint forms significantly enhances functionality and flexibility in data management. This video demonstrates how to integrate JavaScript into the List or Library control, customize forms, and optimize their performance.",
+        "VideoUrl": "https://www.youtube.com/watch?v=gErlXVH3sC8"
+    }
+]

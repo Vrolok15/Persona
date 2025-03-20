@@ -1,0 +1,28 @@
+[
+    {
+        "Title": "Responsive Web Design",
+        "Description": "Certification for skills in HTML, CSS, and responsive design.",
+        "CompletedProjects": [
+            "Survey Form",
+            "Tribute Page",
+            "Technical Documentation Page",
+            "Product Landing Page",
+            "Personal Portfolio Webpage"
+        ],
+        "ImageUrl": "img/FreeCodeCamp_logo.svg",
+        "CertificateUrl": "https://www.freecodecamp.org/certification/vrolok15/responsive-web-design"
+    },
+    {
+        "Title": "JavaScript Algorithms and Data Structures",
+        "Description": "Certification for skills in JavaScript algorithms and data structures.",
+        "CompletedProjects": [
+            "Palindrome Checker",
+            "Roman Numeral Converter",
+            "Caesar Cipher",
+            "Telephone Number Validator",
+            "Cash Register"
+        ],
+        "ImageUrl": "img/FreeCodeCamp_logo.svg",
+        "CertificateUrl": "https://www.freecodecamp.org/certification/vrolok15/javascript-algorithms-and-data-structures"
+    }
+]
