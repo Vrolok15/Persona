@@ -7,7 +7,7 @@ const CertificateCard = {
         }
     },
     template: `
-        <div class="certificate-tile">
+        <div class="certificate-tile tile">
             <div class="certificate-image">
                 <img :src="certificate.ImageUrl" :alt="certificate.Title" class="certificate-img">
             </div>
@@ -35,7 +35,7 @@ const ProjectCard = {
         }
     },
     template: `
-        <div class="project-tile">
+        <div class="project-tile tile">
             <div class="project-image">
                 <svg class="framework-icon" viewBox="0 0 100 100">
                     <use :href="project.Logo"/>
@@ -47,7 +47,7 @@ const ProjectCard = {
                 <a :href="project.ProjectUrl" class="project-link" target="_blank">
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <a :href="project.ProjectUrl" class="project-link" target="_blank">
+                <a :href="project.LiveUrl" class="project-link" target="_blank">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
             </div>
@@ -64,7 +64,7 @@ const GameCard = {
         }
     },
     template: `
-        <div class="project-tile game-tile">
+        <div class="project-tile game-tile tile">
             <div class="project-image game-image">
                 <img :src="game.ImageUrl" :alt="game.Title" class="game-img">
             </div>
@@ -88,7 +88,7 @@ const VideoCard = {
         }
     },
     template: `
-        <div class="project-tile">
+        <div class="project-tile tile">
             <div class="video-container">
                 <iframe 
                     :src="video.VideoUrl.replace('watch?v=', 'embed/')" 
@@ -184,14 +184,47 @@ const app = Vue.createApp({
             games: [],
             videos: [],
             loading: true,
-            error: null
+            error: null,
+            isWelcomeVisible: true
         }
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
     },
+    updated() {
+        this.setupSmoothScroll();
+    },
     beforeUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            const scrollPosition = window.scrollY;
+            this.isWelcomeVisible = scrollPosition < 100;
+        },
+        setupSmoothScroll() {
+            const navbarHeight = 60; // Height of the fixed navbar
+            
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const targetId = anchor.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const elementPosition = targetElement.offsetTop;
+                        const offsetPosition = elementPosition - navbarHeight;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
     },
     async created() {
         try {

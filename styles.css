@@ -9,6 +9,14 @@
     --color-background: #071952;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.tile {
+    opacity: 0.9;
+}
+
 body {
     font-family: 'Oxanium', 'Segoe UI', Tahoma, Verdana, sans-serif;
     line-height: 1.6;
