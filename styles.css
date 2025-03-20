@@ -21,8 +21,16 @@ a {
     color: white;
 }
 
+h3 {
+    text-align: center;
+}
+
 ul {
     list-style: none;
+    text-wrap: nowrap;
+    margin: auto;
+    width: 50%;
+    padding: 1em;
 }
 
 /* Navbar Styles */
