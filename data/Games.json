@@ -10,5 +10,11 @@
         "Description": "A short horror dungeon crawler built with Phaser 3.",
         "ImageUrl": "img/phaser-logo.svg",
         "GameUrl": "https://vrolok15.github.io/creepy-crawler-dist/"
+    },
+    {
+        "Title": "Blockmaster",
+        "Description": "A block puzzle game built with Phaser 3.",
+        "ImageUrl": "img/phaser-logo.svg",
+        "GameUrl": "https://vrolok15.github.io/Blockmaster/"
     }
 ]
