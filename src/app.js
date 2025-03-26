@@ -193,6 +193,7 @@ const app = createApp({
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
+        this.loadData();
     },
     updated() {
         this.setupSmoothScroll();
@@ -227,30 +228,30 @@ const app = createApp({
                     }
                 });
             });
-        }
-    },
-    async created() {
-        try {
-            const [certificatesRes, projectsRes, gamesRes, videosRes] = await Promise.all([
-                fetch('data/Certificates.json'),
-                fetch('data/Projects.json'),
-                fetch('data/Games.json'),
-                fetch('data/Videos.json')
-            ]);
+        },
+        async loadData() {
+            try {
+                const [certificatesRes, projectsRes, gamesRes, videosRes] = await Promise.all([
+                    fetch('data/Certificates.json'),
+                    fetch('data/Projects.json'),
+                    fetch('data/Games.json'),
+                    fetch('data/Videos.json')
+                ]);
 
-            if (!certificatesRes.ok || !projectsRes.ok || !gamesRes.ok || !videosRes.ok) {
-                throw new Error('Failed to load data');
+                if (!certificatesRes.ok || !projectsRes.ok || !gamesRes.ok || !videosRes.ok) {
+                    throw new Error('Failed to load data');
+                }
+
+                this.certificates = await certificatesRes.json();
+                this.projects = await projectsRes.json();
+                this.games = await gamesRes.json();
+                this.videos = await videosRes.json();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                this.error = 'Failed to load portfolio data. Please try again later.';
+            } finally {
+                this.loading = false;
             }
-
-            this.certificates = await certificatesRes.json();
-            this.projects = await projectsRes.json();
-            this.games = await gamesRes.json();
-            this.videos = await videosRes.json();
-        } catch (error) {
-            console.error('Error loading data:', error);
-            this.error = 'Failed to load portfolio data. Please try again later.';
-        } finally {
-            this.loading = false;
         }
     },
     template: `
@@ -340,4 +341,5 @@ const app = createApp({
     `
 });
 
+// Mount the app
 app.mount('#app');
