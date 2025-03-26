@@ -171,7 +171,7 @@ const TechStack = {
 };
 
 // Main App
-const app = Vue.createApp({
+const app = createApp({
     components: {
         CertificateCard,
         ProjectCard,
