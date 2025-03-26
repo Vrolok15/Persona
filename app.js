@@ -1,5 +1,5 @@
-// Import Vue from CDN
-import { createApp } from 'vue';
+// Import Vue from node_modules
+import { createApp } from './node_modules/vue/dist/vue.esm-browser.js';
 
 // Certificate Card Component
 const CertificateCard = {
