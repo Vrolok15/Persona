@@ -1,3 +1,6 @@
+// Import Vue from CDN
+import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
 // Certificate Card Component
 const CertificateCard = {
     props: {
